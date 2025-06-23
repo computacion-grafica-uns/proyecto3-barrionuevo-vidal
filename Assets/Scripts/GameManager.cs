@@ -110,11 +110,13 @@ public class GameManager : MonoBehaviour
         }
         if (anomalyPresent)
         {
+            Debug.Log(roomName + " " + anomalyName + " found!");
             anomaliesFound++;
             guiManager.AnomalyRemoved();
         }
         else
         {
+            Debug.Log(roomName + " " + anomalyName + " not found!");
             guiManager.AnomalyNotFound();
         }
     }
