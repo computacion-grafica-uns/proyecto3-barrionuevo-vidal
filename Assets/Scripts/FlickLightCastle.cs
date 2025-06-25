@@ -2,30 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlickLight : MonoBehaviour
+public class FlickLightCastle : MonoBehaviour
 {
-    public Light lightSource;
+    public Material materialCastillo;
     public float flickerDuration = 0.1f;
     public float flickerInterval = 0.05f;
 
     private void Start()
     {
-        lightSource = GetComponent<Light>();
         StartCoroutine(FlickerLight());
     }
 
     private IEnumerator FlickerLight()
     {
+        
+        bool isOn = materialCastillo.IsKeywordEnabled("_EMISSION");
         float elapsedTime = 0f;
 
         while (elapsedTime < flickerDuration)
         {
-            lightSource.enabled = !lightSource.enabled;
+            if (isOn)
+            {
+                materialCastillo.SetColor("_EmissionColor", Color.black);
+                materialCastillo.DisableKeyword("_EMISSION");
+            }
+            else
+            {
+                materialCastillo.SetColor("_EmissionColor", Color.white);
+                materialCastillo.EnableKeyword("_EMISSION");
+            }
+
             elapsedTime += flickerInterval;
             yield return new WaitForSeconds(flickerInterval);
         }
-
-        lightSource.enabled = true; // Ensure the light is on after flickering
 
         StartCoroutine(FlickerLight()); // Restart flickering
     }

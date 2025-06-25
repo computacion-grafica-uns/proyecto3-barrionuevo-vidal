@@ -24,12 +24,18 @@ public class GameManager : MonoBehaviour
 
     public void ActivateCamera(int room)
     {
-        foreach(Room r in rooms)
+        foreach (Room r in rooms)
         {
             r.GetCamera().SetActive(false);
+            r.setActiveObjects(false); 
         }
         rooms[room].GetCamera().SetActive(true);
         guiManager.UpdateRoomLabel(rooms[room].roomName);
+
+        if (rooms[room].roomName == "Taberna")
+        {
+            rooms[room].setActiveObjects(true);    
+        }
     }
 
     public void CreateAnomaly()

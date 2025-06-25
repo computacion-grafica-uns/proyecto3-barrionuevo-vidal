@@ -5,13 +5,14 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     public string roomName;
+    public List<GameObject> activeObjects;
     public GameObject camera;
     private Anomalia[] anomalies;
 
     private void Start()
     {
         anomalies = transform.GetComponents<Anomalia>();
-        foreach(Anomalia a in anomalies)
+        foreach (Anomalia a in anomalies)
         {
             a.Deactivate();
         }
@@ -25,7 +26,7 @@ public class Room : MonoBehaviour
     public bool ActivateAnomaly()
     {
         if (GetActiveAnomaliesNumber() == anomalies.Length)
-        {   //ya están todas activas
+        {   //ya estï¿½n todas activas
             return false;
         }
         else
@@ -76,5 +77,11 @@ public class Room : MonoBehaviour
         return anomalyPresent;
     }
 
-
+    public void setActiveObjects(bool active)
+    {
+        foreach (GameObject obj in activeObjects)
+        {
+            obj.SetActive(active);
+        }
+    }
 }

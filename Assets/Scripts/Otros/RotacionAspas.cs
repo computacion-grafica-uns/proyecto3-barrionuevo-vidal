@@ -8,6 +8,7 @@ public class RotacionAspas : MonoBehaviour
 
     void Update()
     {
+        
         transform.Rotate(Vector3.left * speed * Time.deltaTime,Space.World);
     }
 }
