@@ -12317,6 +12317,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b35e19a673d666749b4403184ff44703, type: 3}
   m_PrefabInstance: {fileID: 946755769}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &632696753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d6406c76dd5e2fe4581ebf58bd2cd96c, type: 3}
+  m_PrefabInstance: {fileID: 899152350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &635930651
 GameObject:
   m_ObjectHideFlags: 0
@@ -15267,13 +15272,30 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6406c76dd5e2fe4581ebf58bd2cd96c, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1267260312}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6406c76dd5e2fe4581ebf58bd2cd96c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 899152352}
   m_SourcePrefab: {fileID: 100100000, guid: d6406c76dd5e2fe4581ebf58bd2cd96c, type: 3}
 --- !u!4 &899152351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6406c76dd5e2fe4581ebf58bd2cd96c, type: 3}
   m_PrefabInstance: {fileID: 899152350}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &899152352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632696753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa91286c16562e43be5e7ed2a37adba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirrorCamera: {fileID: 1267260314}
+  updateInterval: 1
 --- !u!1 &899190404
 GameObject:
   m_ObjectHideFlags: 0
@@ -18847,13 +18869,13 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
+    m_Bits: 1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 8400000, guid: bef43710de18b4b4f803d03d641cd838, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
